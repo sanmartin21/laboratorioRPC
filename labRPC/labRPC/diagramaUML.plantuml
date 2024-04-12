@@ -1,0 +1,24 @@
+@startuml
+class Produto {
+  - id: uuid.UUID
+  - nome: str
+  - descricao: str
+  - preco: float
+  - quantidade: int
+  - fabricante_id: uuid.UUID
+  - categoria_id: uuid.UUID
+}
+
+class Categoria {
+  - id: uuid.UUID
+  - nome: str
+}
+
+class Fabricante {
+  - id: uuid.UUID
+  - nome: str
+}
+
+Produto "1" -- "*" Categoria : pertence
+Produto "1" -- "1" Fabricante : é fabricado por
+@enduml
