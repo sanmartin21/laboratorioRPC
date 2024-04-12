@@ -1,0 +1,34 @@
+@startuml
+skinparam componentStyle uml2
+scale 800 width
+
+package "LabRPC" {
+    [FastAPI] as FastAPI
+    [Pydantic] as Pydantic
+    [httpx] as Httpx
+    [JSON File] as JsonFile
+
+    package "business" {
+        [Produto]
+        [Categoria]
+        [Fabricante]
+    }
+
+    package "client" {
+        [client.py]
+    }
+
+    package "data" {
+        [main.py]
+        [models.py]
+    }
+
+    FastAPI --> Httpx
+    main.py --> JsonFile
+    models.py --> Pydantic
+    client.py --> Httpx
+    client.py --> Pydantic
+    client.py --> main.py
+}
+
+@enduml
