@@ -1,5 +1,3 @@
-# Classe business.py
-
 import uuid
 
 class Produto:
