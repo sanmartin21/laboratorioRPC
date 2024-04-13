@@ -79,7 +79,6 @@ def list_produtos():
     else:
         return []
 
-# Nova rota para calcular os somatórios
 @app.get("/calcular_somatorios/")
 def calcular_somatorios():
     file_path = 'data/produtos.json'
