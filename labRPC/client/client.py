@@ -1,5 +1,3 @@
-# Classe client.py
-
 import json
 import httpx
 import asyncio
@@ -31,7 +29,6 @@ async def post_fabricante(nome):
         print(response.json())
         return response.json()
 
-# Exemplo de uso
 async def cadastrar_produtos():
     produto = await post_produto("Produto A")
     categoria = await post_categoria("Categoria X")
